@@ -62,15 +62,15 @@ function GetAppPassword() {
       let password = matchArray[4];
       let hisAccount = magicJS.read(smzdmAccountKey);
       let hisPassword = magicJS.read(smzdmPasswordKey);
-      if (account != hisAccount || password != hisPassword) {
+//       if (account != hisAccount || password != hisPassword) {
         magicJS.write(smzdmAccountKey, account);
         magicJS.write(smzdmPasswordKey, password);
         magicJS.notify(scriptName, '', '🎈获取账号密码成功！！');
         magicJS.logInfo(`获取账号密码成功，登录账号：${account}`);
-      }
-      else {
-        magicJS.logInfo(`账号密码没有变化，无需更新。登录账号：${account}`);
-      }
+//       }
+//       else {
+//         magicJS.logInfo(`账号密码没有变化，无需更新。登录账号：${account}`);
+//       }
     }
     catch (ex) {
       magicJS.notify(scriptName, '', '❌获取账号密码出现异常,请查阅日志！！');
